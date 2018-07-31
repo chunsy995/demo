@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Brand Management</h1>
+    {% for brand in brandlist %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='brand_pics/' + brand.image_file) }}">
+          <div class="media-body">
+            <h2><a class="article-title" href="/">{{ brand.name }}</a></h2>
+            <small class="text-muted">{{ brand.date_created.strftime('%Y-%m-%d') }}</small>            
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

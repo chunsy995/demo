@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Sku Management</h1>
+    {% for sku in skulist %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='brand_pics/' + sku.image_file) }}">
+          <div class="media-body">
+            <h2><a class="article-title" href="/">{{ sku.name }}</a></h2>
+            <small class="text-muted">{{ sku.date_created.strftime('%Y-%m-%d') }}</small>            
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

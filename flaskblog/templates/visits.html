@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Unique User Visits</h1>
+    {% for uservisit in visitors %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <small class="text-muted">Brand ID: {{ uservisit.brand_id }}</small><br>
+              <small class="text-muted">SKU ID: {{ uservisit.sku_id }}</small><br>
+              <small class="text-muted">Add ID: {{ uservisit.add_id }}</small><br>
+              <small class="text-muted">Session ID: {{ uservisit.session_id }}</small><br>
+              <small class="text-muted">Business Name: {{ uservisit.businessName }}</small><br>
+              <small class="text-muted">Business Website: {{ uservisit.businessWebsite }}</small><br>
+              <small class="text-muted">City: {{ uservisit.city }}</small><br>
+              <small class="text-muted">Continent: {{ uservisit.continent }}</small><br>
+              <small class="text-muted">Country: {{ uservisit.country }}</small><br>
+              <small class="text-muted">Country Code: {{ uservisit.countryCode }}</small><br>
+              <small class="text-muted">IP Name: {{ uservisit.ipname }}</small><br>
+              <small class="text-muted">IP Type: {{ uservisit.iptype }}</small><br>
+              <small class="text-muted">ISP: {{ uservisit.isp }}</small><br>
+              <small class="text-muted">Latitude: {{ uservisit.lat }}</small><br>
+              <small class="text-muted">Longitude: {{ uservisit.lon }}</small><br>
+              <small class="text-muted">Org: {{ uservisit.org }}</small><br>
+              <small class="text-muted">Query: {{ uservisit.querystr }}</small><br>
+              <small class="text-muted">Region: {{ uservisit.region }}</small><br>
+              <small class="text-muted">Status: {{ uservisit.status }}</small><br>
+              <small class="text-muted">Date: {{ uservisit.date_created }}</small><br>
+            </div>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

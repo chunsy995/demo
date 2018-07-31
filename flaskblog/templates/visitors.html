@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>User Visits</h1>
+    {% for visit in visits %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <small class="text-muted">User Agent: {{ visit.ua_browser }}</small><br>
+              <small class="text-muted">Language: {{ visit.ua_language }}</small><br>
+              <small class="text-muted">Version: {{ visit.ua_version }}</small><br>
+              <small class="text-muted">View Args: {{ visit.view_args }}</small><br>
+              <small class="text-muted">Status: {{ visit.status }}</small><br>
+              <small class="text-muted">Addr: {{ visit.remote_addr }}</small><br>
+              <small class="text-muted">Auth: {{ visit.authorization }}</small><br>
+              <small class="text-muted">IP Info: {{ visit.ip_info }}</small><br>
+              <small class="text-muted">Path: {{ visit.path }}</small><br>
+              <small class="text-muted">Speed: {{ visit.speed }}</small><br>
+              <small class="text-muted">Username: {{ visit.username }}</small><br>
+              <small class="text-muted">Track Var: {{ visit.track_var }}</small><br>
+              <small class="text-muted">Date: {{ visit.datetime }}</small><br>
+            </div>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
